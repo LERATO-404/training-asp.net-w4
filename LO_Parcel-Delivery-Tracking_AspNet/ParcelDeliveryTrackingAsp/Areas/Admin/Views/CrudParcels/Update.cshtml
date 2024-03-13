@@ -1,0 +1,88 @@
+﻿@model ParcelDeliveryTrackingAsp.Models.ParcelDto
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Admin/_AdminLayout.cshtml";
+}
+
+<style>
+    /* Apply custom CSS for styling */
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    /* Style the textboxes */
+    input[type="text"] {
+        width: 100%;
+        padding: 5px;
+    }
+
+    /* Style the submit button */
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    /* Style the error messages */
+    .text-danger {
+        color: red;
+    }
+</style>
+
+<h1>Update</h1>
+
+<h4>ParcelDto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-area="Admin" asp-controller="CrudParcels" asp-action="Update" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                
+                @Html.HiddenFor(Model => Model.ParcelId)
+                <span asp-validation-for="ParcelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.SenderId)
+                @Html.TextBoxFor(model => model.SenderId)
+                <span asp-validation-for="SenderId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.ReceiverId)
+                @Html.TextBoxFor(model => model.ReceiverId)
+                <span asp-validation-for="ReceiverId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.Weight)
+                @Html.TextBoxFor(model => model.Weight)
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.ParcelStatus)
+                @Html.TextBoxFor(model => model.ParcelStatus)
+                <span asp-validation-for="ParcelStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.ScheduledDeliveryDate)
+                @Html.TextBoxFor(model => model.ScheduledDeliveryDate)
+                <span asp-validation-for="ScheduledDeliveryDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.AdditionalNotes)
+                @Html.TextBoxFor(model => model.AdditionalNotes)
+                <span asp-validation-for="AdditionalNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="~/Admin/CrudParcels/Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

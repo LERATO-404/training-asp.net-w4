@@ -1,0 +1,94 @@
+﻿@model ParcelDeliveryTrackingAsp.Areas.AuthServices.Models.RegistrationVM
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Areas/AuthServices/_AuthLayout.cshtml";
+}
+
+<section>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-area="AuthServices" asp-controller="UserManager" asp-action="Register" method="post">
+                <div class="form-row align-items-center">
+
+                    <div class="text-center">
+                        <h4>@ViewData["Title"]</h4>
+                    </div>
+
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepared">
+                                <div class="input-group-text">@Html.DisplayNameFor(model => model.UserName)&nbsp;</div>
+                            </div>
+                            <input type="text" asp-for="UserName" class="form-control" id="UserName" name="UserName" placeholder="UserName" required>
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">@Html.DisplayNameFor(model => model.Email)&nbsp;</div>
+                            </div>
+                            <input type="text" asp-for="Email" class="form-control" id="Email" name="Email" placeholder="Email" required>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">@Html.DisplayNameFor(model => model.Password)&nbsp;</div>
+                            </div>
+                            <input type="password" asp-for="password" class="form-control" id="Password" name="Password" placeholder="Password" required>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">@Html.DisplayNameFor(model => model.FirstName)&nbsp;</div>
+                            </div>
+                            <input type="text" asp-for="FirstName" class="form-control" id="FirstName" name="FirstName" placeholder="FirstName" required>
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">@Html.DisplayNameFor(model => model.LastName)&nbsp;</div>
+                            </div>
+                            <input type="text" asp-for="LastName" class="form-control" id="LastName" name="LastName" placeholder="LastName" required>
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <input type="submit" value="Register" class="btn btn-primary" />
+                    </div>
+                </div>
+            </form>
+
+            <div class="text-center">
+                <span class="loginSpan">&nbsp;</span>
+                <a href="~/AuthServices/UserManager/Login">Login</a>
+                <span class="loginSpan">&nbsp;</span>
+                <a href="/">Back to Home</a>
+            </div>
+        </div>
+
+         <div class="col  col--2 col--last"></div>
+    </div>
+</section>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

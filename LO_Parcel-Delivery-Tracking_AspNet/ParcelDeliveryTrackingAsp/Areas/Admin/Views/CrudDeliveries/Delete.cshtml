@@ -1,0 +1,52 @@
+﻿@model ParcelDeliveryTrackingAsp.Models.Delivery
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/_AdminLayout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Delivery</h4>
+    <hr />
+    <form asp-area="Admin" asp-controller="CrudDeliveries" asp-action="Delete" method="post">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DeliveryId)
+                @Html.HiddenFor(model => model.DeliveryId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DeliveryId)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ParcelId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ParcelId)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PersonnelId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PersonnelId)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DeliveryStatus)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DeliveryStatus)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DeliveryDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DeliveryDate)
+            </dd>
+        </dl>
+
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a href="~/Admin/CrudDeliveries/Index">Back to List</a>
+    </form>
+</div>

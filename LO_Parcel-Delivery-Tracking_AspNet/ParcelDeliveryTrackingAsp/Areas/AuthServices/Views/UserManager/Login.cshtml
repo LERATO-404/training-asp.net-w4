@@ -1,0 +1,68 @@
+﻿@model ParcelDeliveryTrackingAsp.Areas.AuthServices.Models.LoginVM
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Areas/AuthServices/_AuthLayout.cshtml";
+}
+
+<section>
+    <div class="row">
+        <div class="col col--2"></div>
+
+
+        <div class="col col--8">
+            <form asp-area="AuthServices" asp-controller="UserManager" asp-action="Login" method="post">
+
+                <div class="form-row align-items-center">
+                    <div class="text-center">
+                        <h4>@ViewData["Title"]</h4>
+                    </div>
+
+                    <div class="text-center">
+                        <!-- <img src="~/images/usrlogin.png" width="70px" height="70px" asp-append-version="true"> -->
+                    </div>
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">@Html.DisplayNameFor(model => model.UserName)</div>
+                            </div>
+                            <input type="text" asp-for="UserName" id="UserName" name="UserName" value=@TempData["POSTRegUserUserName"] class="form-control" placeholder="Username" required>
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">@Html.DisplayNameFor(model => model.Password)&nbsp;</div>
+                            </div>
+                            <input type="password" asp-for="password" class="form-control" id="Password" name="Password" placeholder="Password" required>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <input type="submit" value="Login" class="btn btn-primary" />
+                    </div>
+
+                </div>
+            </form>
+            <div class="text-center">
+                <span class="loginSpan">&nbsp;</span>
+                <a href="~/AuthServices/UserManager/Register">Register</a>
+                <span class="loginSpan">&nbsp;</span>
+                <a href="/">Back to Home</a>
+            </div>
+
+            <div class="col col-12 col--last"></div>
+        </div>
+    </div>
+
+
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

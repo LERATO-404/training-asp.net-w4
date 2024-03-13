@@ -1,0 +1,57 @@
+﻿@model ParcelDeliveryTrackingAsp.Models.Delivery
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Manager/_ManagerLayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Delivery</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-area="Manager" asp-controller="ManagerDeliveries" asp-action="Create" method="Post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+
+                <input asp-for="DeliveryId" class="form-control" type="hidden" />
+
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.ParcelId)
+                <input asp-for="ParcelId" class="form-control" />
+                <span asp-validation-for="ParcelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.PersonnelId)
+                <input asp-for="PersonnelId" class="form-control" />
+                <span asp-validation-for="PersonnelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.DeliveryStatus)
+                <select asp-for="DeliveryStatus" class="form-control">
+                    <option disabled selected value="">Select an option</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Scheduled">Scheduled</option>
+                </select>
+                <span asp-validation-for="DeliveryStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.DeliveryDate)
+                <input asp-for="DeliveryDate" class="form-control" type="date" />
+                <span asp-validation-for="DeliveryDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a href="~/Manager/ManagerDeliveries/Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

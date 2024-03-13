@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main {
+    flex: 1;
+    overflow: auto; 
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: sticky;
+    bottom: 0;
+}
+
+

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParcelDeliveryTrackingAPI", "ParcelDeliveryTrackingAPI\ParcelDeliveryTrackingAPI.csproj", "{DB96A220-F383-4C90-A74E-78C9BB2F8577}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RESTApi.NunitTests", "RESTApi.NunitTests\RESTApi.NunitTests.csproj", "{C37C73BF-0234-405F-8A84-6431C305619B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB96A220-F383-4C90-A74E-78C9BB2F8577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB96A220-F383-4C90-A74E-78C9BB2F8577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB96A220-F383-4C90-A74E-78C9BB2F8577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB96A220-F383-4C90-A74E-78C9BB2F8577}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C37C73BF-0234-405F-8A84-6431C305619B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C37C73BF-0234-405F-8A84-6431C305619B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C37C73BF-0234-405F-8A84-6431C305619B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C37C73BF-0234-405F-8A84-6431C305619B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {330CB6A2-9F18-41BE-AA65-CF4D4CA01D6A}
+	EndGlobalSection
+EndGlobal

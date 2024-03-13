@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ParcelDeliveryTrackingAsp.Models.Delivery>
+
+@{
+    ViewData["Title"] = "MyDeliveries";
+    Layout = "~/Areas/Driver/_DriverLayout.cshtml";
+}
+
+<h1>MyDeliveries</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParcelId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonnelId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParcelId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonnelId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

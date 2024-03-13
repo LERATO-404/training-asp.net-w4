@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - Parcel Delivery Tracking</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/global.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/adm-styles.css" asp-append-version="true" />
+   
+     <script src="~/js/showPageSetter.js"></script>
+     <script src="https://kit.fontawesome.com/5903e24044.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   
+    <div id="adm-header"></div>
+
+    <div class="container">
+        <main role="main" class="admin-main">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer>
+        <div id="adm-footer"></div>
+    </footer>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://kit.fontawesome.com/5903e24044.js" crossorigin="anonymous"></script>
+    <script>
+        const linksForLandingPage = [
+            { text: 'Home', url: '#' },
+            { text: 'Personnel', url: '/Admin/CrudPersonnel/Index' },
+            { text: 'Parcels', url: '/Admin/CrudParcels/Index' },
+            { text: 'Deliveries', url: '/Admin/CrudDeliveries/Index' },
+            { text: 'Profile', url: '/AuthServices/UserManager/UserProfile' },
+        ];
+        const isLoggedIn = true;
+        const landingPageHeader = createHeader(linksForLandingPage, isLoggedIn);
+        const footer = createFooter();
+
+        document.getElementById("adm-header").appendChild(landingPageHeader);
+        document.getElementById('adm-footer').appendChild(footer);
+    </script>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

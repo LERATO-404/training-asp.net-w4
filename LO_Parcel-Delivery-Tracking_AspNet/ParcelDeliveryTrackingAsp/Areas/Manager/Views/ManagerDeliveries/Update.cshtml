@@ -1,0 +1,72 @@
+﻿@model ParcelDeliveryTrackingAsp.Models.Delivery
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Manager/_ManagerLayout.cshtml";
+}
+
+<h1>Update</h1>
+
+<h4>Delivery</h4>
+<hr />
+
+<style>
+    /* Apply custom CSS for styling */
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    /* Style the textboxes */
+    input[type="text"] {
+        width: 100%;
+        padding: 5px;
+    }
+
+    /* Style the submit button */
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    /* Style the error messages */
+    .text-danger {
+        color: red;
+    }
+</style>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-area="Manager" asp-controller="ManagerDeliveries" asp-action="Update" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @Html.HiddenFor(Model => Model.DeliveryId)
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.ParcelId)
+                @Html.TextBoxFor(model => model.ParcelId)
+                <span asp-validation-for="ParcelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.PersonnelId)
+                @Html.TextBoxFor(model => model.PersonnelId)
+                <span asp-validation-for="PersonnelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.DeliveryStatus)
+                @Html.TextBoxFor(model => model.DeliveryStatus)
+                <span asp-validation-for="DeliveryStatus" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="~/Manager/ManagerDeliveries/Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

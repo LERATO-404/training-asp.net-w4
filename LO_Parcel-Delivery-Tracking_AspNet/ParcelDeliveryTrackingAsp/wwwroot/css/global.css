@@ -1,0 +1,262 @@
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.menu-button {
+    display: none;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    background-color: #333333;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    cursor: pointer;
+    margin-left: 40pt;
+    max-height: 40px;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav li::after {
+    content: " ";
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+ }
+
+nav li:hover:after {
+     width: 100%;
+}
+
+
+#about {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+#logout4 {
+    cursor: pointer;
+}
+
+/* Content */
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.content h1  {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.content p {    
+    margin: 10px auto;
+    font-weight: 100;
+    line-height: 40px;
+
+}
+
+
+
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-weight: 100;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #010101;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span {
+    background: #009688;
+    height: 100%;
+    width: 0px;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+button:hover {
+    border: none;
+}
+
+    button:hover span {
+        width: 100%;
+    }
+
+#signInBeginBtn {
+    opacity: 0.9;
+}
+
+#signInBeginBtn:hover {
+    opacity: 1; /* Full opacity on hover */
+}
+
+.card {
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 15px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-position: center;
+    background-size: cover;
+    transform: 0.5s;
+}
+
+.card1 {
+    background-image: url(../images/d1.jpg);
+}
+
+.card2 {
+    background-image: url(../images/d2.jpg);
+}
+
+.card3 {
+    background-image: url(../images/d3.jpg);
+}
+
+.card4 {
+    background-image: url(../images/d4.jpg);
+}
+
+.card:hover {
+    transform: translateY(-5px)
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+
+ul {
+    list-style: none;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+        font-size: 18px;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+        font-weight: 500;
+        position: relative;
+}
+
+    .footer-col ul li a:hover {
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        transition: all 0.3s ease;
+    }
+
+    .footer-col .social-links a {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: rgba(255,255,255,0.2);
+        margin: 0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: all 0.5s ease;
+    }
+
+        .footer-col .social-links a:hover {
+            color: #24262b;
+            background-color: #ffffff;
+        }
+
+.company-name {
+    margin-top: 5%;
+}
+
+/*responsive */
+
+

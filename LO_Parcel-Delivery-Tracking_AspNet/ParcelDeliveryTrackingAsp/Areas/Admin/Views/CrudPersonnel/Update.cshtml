@@ -1,0 +1,63 @@
+﻿@model ParcelDeliveryTrackingAsp.Models.Personnel
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Admin/_AdminLayout.cshtml";
+}
+
+<h1>Update</h1>
+
+<h4>Personnel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-area="Admin" asp-controller="CrudPersonnel" asp-action="Update" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @Html.HiddenFor(Model => Model.PersonnelId)
+               
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.FirstName)
+                @Html.TextBoxFor(model => model.FirstName)
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.LastName)
+                @Html.TextBoxFor(model => model.LastName)
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+                @Html.TextBoxFor(model => model.PhoneNumber)
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.EmailAddress)
+                @Html.TextBoxFor(model => model.EmailAddress)
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.Availability)
+                @Html.TextBoxFor(model => model.Availability)
+                <span asp-validation-for="Availability" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.UserName)
+                @Html.TextBoxFor(model => model.UserName)
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+   <a href="~/Admin/CrudPersonnel/Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
